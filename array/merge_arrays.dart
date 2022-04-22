@@ -13,6 +13,16 @@ main() {
   nums2 = <int>[1];
   answer = mergeArrays_2(nums1, 0, nums2, 1);
   print('Answer: $answer');
+
+  nums1 = <int>[2, 0];
+  nums2 = <int>[1];
+  answer = mergeArrays_2(nums1, 1, nums2, 1);
+  print('Answer: $answer');
+
+  nums1 = <int>[4, 5, 6, 0, 0 ,0];
+  nums2 = <int>[1, 2, 3];
+  answer = mergeArrays_2(nums1, 3, nums2, 3);
+  print('Answer: $answer');
 }
 
 /// Method 2
@@ -34,6 +44,12 @@ List<int> mergeArrays_2(List<int> nums1, int m, List<int> nums2, int n) {
       i--;
       p--;
     }
+  }
+
+  while(j >= 0) {
+    nums1[p] = nums2[j];
+    j--;
+    p--;
   }
 
   return nums1;
